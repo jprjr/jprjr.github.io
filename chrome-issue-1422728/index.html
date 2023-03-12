@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FLAC/Opus in MP4 Demo</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr><th>MIME</th><th>isTypeSupported</th><th>Audio</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script type="text/javascript">
+
+    const audio_samples = [
+      { mime: 'audio/mp4;codecs="flac"',
+        src: 'media/sine-c5.mp4' },
+      { mime: 'audio/mp4;codecs="fLaC"',
+        src: 'media/sine-e5.mp4' },
+      { mime: 'audio/mp4;codecs="opus"',
+        src: 'media/sine-g5.mp4' },
+      { mime: 'audio/mp4;codecs="Opus"',
+        src: 'media/sine-c6.mp4' },
+    ];
+
+    audio_samples.forEach(function(sample) {
+      const mediaSource = new MediaSource();
+      const audio = document.createElement('audio');
+      audio.src = URL.createObjectURL(mediaSource);
+      audio.setAttribute('controls','');
+
+      mediaSource.addEventListener('sourceopen', function() {
+        let sourceBuffer = null;
+        URL.revokeObjectURL(audio.src);
+
+        try {
+          sourceBuffer = mediaSource.addSourceBuffer(sample.mime);
+        } catch(e) {
+          console.log(e);
+					return;
+        }
+
+        sourceBuffer.addEventListener('updateend', function() {
+          if(!sourceBuffer.updating && mediaSource.readyState === 'open') {
+             mediaSource.endOfStream();
+         }
+        });
+
+        fetch(sample.src).then(function(response) {
+          return response.arrayBuffer();
+        }).then(function(data) {
+          sourceBuffer.appendBuffer(data);
+        });
+
+      });
+
+      /* append everything to table */
+
+      const tbody = document.getElementsByTagName('tbody')[0];
+      const tr = document.createElement('tr');
+      const td_mime = document.createElement('td');
+      const td_is_supported = document.createElement('td');
+      const td_audio = document.createElement('td');
+
+      td_mime.innerText = sample.mime;
+      td_is_supported.innerText = MediaSource.isTypeSupported(sample.mime) ? 'true' : 'false';
+
+      td_audio.appendChild(audio);
+      tr.appendChild(td_mime);
+      tr.appendChild(td_is_supported);
+      tr.appendChild(td_audio);
+      tbody.appendChild(tr);
+
+    });
+
+    </script>
+  </body>
+</html>
+
