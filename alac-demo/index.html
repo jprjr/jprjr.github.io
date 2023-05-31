@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#log {
+  font-family: monospace;
+  display: block;
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="js/hls.js"></script>
+<title>HLS.js ALAC Demo</title>
+</head>
+<body>
+<h1>HLS.js ALAC Demo</h1>
+<audio id="the_audio" controls preload="none"></audio>
+
+<div id="log"></div>
+
+<script type="text/javascript">
+
+let audio = document.getElementById('the_audio');
+
+let div = document.getElementById('log');
+let start = new Date();
+const NL = /\n/;
+
+function log() {
+  var p = document.createElement('p');
+  let now = new Date();
+  let diff = (now - start).toString();
+  let a = [];
+  let i = 0;
+
+  a.push(diff / 1000);
+  for(i=0;i<arguments.length;i++) {
+    let s = arguments[i].toString();
+    
+    a.push(s.replace(NL,'<br/>'));
+  }
+
+  p.innerHTML = a.join(', ');
+  div.appendChild(p);
+  return p;
+}
+
+
+log('HLS.js version: ' + Hls.version);
+
+var hls = new Hls({});
+hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+    hls.loadSource('segments/index.m3u8');
+});
+hls.attachMedia(audio);
+
+</script>
+
+</body>
+</html>
