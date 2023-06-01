@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>2.1 AAC Audio in Fragmented MP4</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr><th>File</th><th>HTML Audio</th><th>MSE</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script type="text/javascript">
+
+    const audio_samples = [
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: '2_point_1.m4a' },
+    ];
+
+    audio_samples.forEach(function(sample) {
+      const mse_audio = document.createElement('audio');
+      const html_audio = document.createElement('audio');
+
+      html_audio.src = sample.src;
+      html_audio.setAttribute('controls','');
+
+      const mediaSource = new MediaSource();
+      mse_audio.src = URL.createObjectURL(mediaSource);
+      mse_audio.setAttribute('controls','');
+
+      mediaSource.addEventListener('sourceopen', function() {
+        let sourceBuffer = null;
+        URL.revokeObjectURL(mse_audio.src);
+
+        try {
+          sourceBuffer = mediaSource.addSourceBuffer(sample.mime);
+        } catch(e) {
+          console.log(e);
+          return;
+        }
+
+        sourceBuffer.addEventListener('updateend', function() {
+          if(!sourceBuffer.updating && mediaSource.readyState === 'open') {
+             mediaSource.endOfStream();
+         }
+        });
+
+        fetch(sample.src).then(function(response) {
+          return response.arrayBuffer();
+        }).then(function(data) {
+          sourceBuffer.appendBuffer(data);
+        });
+
+      });
+
+      /* append everything to table */
+
+      const tbody = document.getElementsByTagName('tbody')[0];
+      const tr = document.createElement('tr');
+      const td_file = document.createElement('td');
+      const td_html_audio = document.createElement('td');
+      const td_mse_audio = document.createElement('td');
+
+      td_file.innerText = sample.src;
+
+      td_html_audio.appendChild(html_audio);
+      td_mse_audio.appendChild(mse_audio);
+      tr.appendChild(td_file);
+      tr.appendChild(td_html_audio);
+      tr.appendChild(td_mse_audio);
+      tbody.appendChild(tr);
+
+    });
+
+    </script>
+  </body>
+</html>
+
+
