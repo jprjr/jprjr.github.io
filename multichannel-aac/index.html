@@ -4,8 +4,40 @@
     <meta charset="utf-8">
     <title>Multichannel AAC Audio in Fragmented MP4</title>
     <style>
-      table, th, td {
-        border: 1px solid black;
+
+      table {
+          min-width: 90%;
+          border-collapse: collapse;
+          margin: auto;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          font-family: sans-serif;
+          border-radius: 10px;
+          overflow: hidden;
+      }
+
+      thead tr {
+          background-color: #009879;
+          color: #ffffff;
+          text-align: left;
+      }
+
+      th, td {
+          padding: 12px 15px;
+      }
+
+      tbody tr {
+          border-bottom: 1px solid #dddddd;
+      }
+      tbody tr:nth-of-type(even) {
+          background-color: #f3f3f3;
+      }
+
+      tbody tr:last-of-type {
+          border-bottom: 2px solid #009879;
+      }
+
+      audio {
+          width: 100%;
       }
     </style>
   </head>
@@ -116,10 +148,12 @@
 
       html_audio.src = sample.src;
       html_audio.setAttribute('controls','');
+      html_audio.setAttribute('preload','none');
 
       const mediaSource = new MediaSource();
       mse_audio.src = URL.createObjectURL(mediaSource);
       mse_audio.setAttribute('controls','');
+      mse_audio.setAttribute('preload','none');
 
       mediaSource.addEventListener('sourceopen', function() {
         let sourceBuffer = null;
@@ -158,7 +192,7 @@
 
       td_file.innerText = sample.src;
       td_layout.innerText = sample.layout;
-      td_pce.innerText = sample.pce ? 'true' : 'false';
+      td_pce.innerHTML = sample.pce ? '<strong>true</strong>' : 'false';
 
       td_html_audio.appendChild(html_audio);
       td_mse_audio.appendChild(mse_audio);
