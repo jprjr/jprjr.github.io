@@ -51,7 +51,7 @@
     <h1>Multichannel AAC Audio in Fragmented MP4</h1>
     <p>Every sample encoded with FFMPEG 6.0's native AAC encoder.</p>
     <p>Each sample is loaded with two methods - as an HTML5 Audio element, and via Media Source Extensions (the "HTML Audio" and "MSE" columns, respectively).</p>
-    <p>ffmpeg CLI: <code>for f in *.wav; do ffmpeg -loglevel info -i "$f" -c:a aac -movflags faststart+empty_moov "${f%.wav}.m4a"; done &gt; log.txt 2&gt;&amp;1</code></p>
+    <p>ffmpeg CLI: <code>for f in *.wav; do ffmpeg -loglevel info -i "$f" -c:a aac -movflags faststart+empty_moov+default_base_moof "${f%.wav}.m4a"; done &gt; log.txt 2&gt;&amp;1</code></p>
     <p><a href="media/log.txt">ffmpeg log</a></p>
     <p>Different channel layouts require different signaling, the method used is indicated by the PCE column:</p>
     <ul>
@@ -149,12 +149,10 @@
 
       html_audio.src = sample.src;
       html_audio.setAttribute('controls','');
-      html_audio.setAttribute('preload','none');
 
       const mediaSource = new MediaSource();
       mse_audio.src = URL.createObjectURL(mediaSource);
       mse_audio.setAttribute('controls','');
-      mse_audio.setAttribute('preload','none');
 
       mediaSource.addEventListener('sourceopen', function() {
         let sourceBuffer = null;
