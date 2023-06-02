@@ -149,10 +149,12 @@
 
       html_audio.src = sample.src;
       html_audio.setAttribute('controls','');
+      html_audio.setAttribute('preload','none');
 
       const mediaSource = new MediaSource();
       mse_audio.src = URL.createObjectURL(mediaSource);
       mse_audio.setAttribute('controls','');
+      mse_audio.setAttribute('preload','none');
 
       mediaSource.addEventListener('sourceopen', function() {
         let sourceBuffer = null;
