@@ -1,0 +1,343 @@
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Guessed Channel Layout for Input Stream #0.0 : stereo
+Input #0, wav, from '2_point_0.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:04.00, bitrate: 1536 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 2 channels, s16, 1536 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, ipod, to '2_point_0.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=      47kB time=00:00:03.98 bitrate=  96.7kbits/s speed=54.9x    
+video:0kB audio:45kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 5.251101%
+[aac @ 0x564f3cebe440] Qavg: 25348.641
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '2_point_1.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:06.00, bitrate: 2304 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 2.1, s16, 2304 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[aac @ 0x55f74c3a3f00] Using a PCE to encode channel layout "2.1"
+Output #0, ipod, to '2_point_1.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 2.1, fltp, 144 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=      55kB time=00:00:05.99 bitrate=  75.1kbits/s speed=65.9x    
+video:0kB audio:52kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 5.988769%
+[aac @ 0x55f74c3a3f00] Qavg: 52215.539
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '3_point_0.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:06.00, bitrate: 2304 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 3.0, s16, 2304 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, ipod, to '3_point_0.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 3.0, fltp, 197 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=      97kB time=00:00:05.99 bitrate= 132.8kbits/s speed=59.8x    
+video:0kB audio:94kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 3.278910%
+[aac @ 0x55e72d51af00] Qavg: 61964.496
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '3_point_1.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:08.00, bitrate: 3072 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 3.1, s16, 3072 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[aac @ 0x564d85a60440] Using a PCE to encode channel layout "3.1"
+Output #0, ipod, to '3_point_1.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 3.1, fltp, 213 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=      92kB time=00:00:07.97 bitrate=  94.8kbits/s speed=33.7x    
+video:0kB audio:90kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 2.623612%
+[aac @ 0x564d85a60440] Qavg: 64147.488
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '4_point_0.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:08.00, bitrate: 3072 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 4.0, s16, 3072 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, ipod, to '4_point_0.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 4.0, fltp, 266 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=     135kB time=00:00:07.97 bitrate= 138.2kbits/s speed=  27x    
+video:0kB audio:132kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.771055%
+[aac @ 0x564f28ada440] Qavg: 65409.438
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '4_point_1.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:10.00, bitrate: 3840 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 4.1, s16, 3840 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[aac @ 0x55dc21e0fa80] Using a PCE to encode channel layout "4.1"
+Output #0, ipod, to '4_point_1.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 4.1, fltp, 335 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=     189kB time=00:00:09.98 bitrate= 155.3kbits/s speed=22.3x    
+video:0kB audio:185kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 2.471623%
+[aac @ 0x55dc21e0fa80] Qavg: 65536.000
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '5_point_0.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:10.00, bitrate: 3840 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 5.0, s16, 3840 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, ipod, to '5_point_0.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 5.0, fltp, 325 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=     167kB time=00:00:09.98 bitrate= 137.4kbits/s speed=25.4x    
+video:0kB audio:163kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 2.790684%
+[aac @ 0x5563bce28a80] Qavg: 65536.000
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '5_point_1.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:12.00, bitrate: 4608 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 5.1, s16, 4608 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, ipod, to '5_point_1.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 5.1, fltp, 341 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=     160kB time=00:00:11.98 bitrate= 109.4kbits/s speed=26.8x    
+video:0kB audio:155kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 3.410281%
+[aac @ 0x555fcaf4bf00] Qavg: 65536.000
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '6_point_0.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:12.00, bitrate: 4608 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 6.0, s16, 4608 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[aac @ 0x55b84e9b3f00] Using a PCE to encode channel layout "6.0"
+Output #0, ipod, to '6_point_0.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 6.0, fltp, 394 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=       0kB time=00:00:10.92 bitrate=   0.0kbits/s speed=21.8x    size=     208kB time=00:00:11.98 bitrate= 142.1kbits/s speed=22.5x    
+video:0kB audio:203kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 2.614615%
+[aac @ 0x55b84e9b3f00] Qavg: 65536.000
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '6_point_1.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:14.00, bitrate: 5376 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 6.1, s16, 5376 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[aac @ 0x555ac138fa00] Using a PCE to encode channel layout "6.1"
+Output #0, ipod, to '6_point_1.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 6.1, fltp, 463 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=       0kB time=00:00:10.32 bitrate=   0.0kbits/s speed=20.6x    size=     260kB time=00:00:13.99 bitrate= 152.1kbits/s speed=19.7x    
+video:0kB audio:254kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 2.377490%
+[aac @ 0x555ac138fa00] Qavg: 65536.000
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '7_point_0.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:14.00, bitrate: 5376 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 7.0, s16, 5376 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[aac @ 0x55cc26a15a00] Using a PCE to encode channel layout "7.0"
+Output #0, ipod, to '7_point_0.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 7.0, fltp, 453 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=       0kB time=00:00:10.60 bitrate=   0.0kbits/s speed=21.2x    size=     240kB time=00:00:13.99 bitrate= 140.3kbits/s speed=21.5x    
+video:0kB audio:234kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 2.582665%
+[aac @ 0x55cc26a15a00] Qavg: 65536.000
+ffmpeg version n6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.1.1 (GCC) 20230429
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librav1e --enable-librsvg --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-version3 --enable-vulkan
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, wav, from '7_point_1.wav':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Duration: 00:00:16.00, bitrate: 6144 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, 7.1, s16, 6144 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, ipod, to '7_point_1.m4a':
+  Metadata:
+    encoder         : Lavf60.3.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, 7.1, fltp, 469 kb/s
+    Metadata:
+      encoder         : Lavc60.3.100 aac
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=       0kB time=00:00:10.58 bitrate=   0.0kbits/s speed=21.2x    size=     229kB time=00:00:15.97 bitrate= 117.5kbits/s speed=23.1x    
+video:0kB audio:225kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.689312%
+[aac @ 0x55af9fc8b440] Qavg: 65536.000

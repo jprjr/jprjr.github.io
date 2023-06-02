@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Multichannel AAC Audio in Fragmented MP4</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Multichannel AAC Audio in Fragmented MP4</h1>
+    <p>Every sample encoded with FFMPEG 6.0's native AAC encoder.</p>
+    <p>Each sample is loaded with two methods - as an HTML5 Audio element, and via Media Source Extensions (the "HTML Audio" and "MSE" columns, respectively).</p>
+    <p>ffmpeg CLI: <code>for f in *.wav; do ffmpeg -loglevel info -i "$f" -c:a aac -movflags faststart+empty_moov "${f%.wav}.m4a"; done &gt; log.txt 2&gt;&amp;1</code></p>
+    <p><a href="media/log.txt">ffmpeg log</a></p>
+    <p>Different channel layouts require different signaling, the method used is indicated by the PCE column:</p>
+    <ul>
+      <li><strong>false</strong> indicates that the channel layout is signaled using the channelConfiguration field
+       within the AudioSpecificConfig.</li>
+      <li><strong>true</strong> indicates that the channel layout is signaled via Program Config Element
+       in the GASpecificConfig.</li>
+    </ul>
+    <p>In all cases, the channel layout is signaled within the Media Initialization Segment.</p>
+    <p>The channels represented in each layout are:</p>
+    <ul>
+      <li><strong>2.0</strong> Front Left, Front Right</li>
+      <li><strong>2.1</strong> Front Left, Front Right, LFE</li>
+      <li><strong>3.0</strong> Front Left, Front Right, Front Center</li>
+      <li><strong>3.1</strong> Front Left, Front Right, Front Center, LFE</li>
+      <li><strong>4.0</strong> Front Left, Front Right, Front Center, Rear Center</li>
+      <li><strong>4.1</strong> Front Left, Front Right, Front Center, Rear Center, LFE</li>
+      <li><strong>5.0</strong> Front Left, Front Right, Front Center, Rear Left, Rear Right</li>
+      <li><strong>5.1</strong> Front Left, Front Right, Front Center, Rear Left, Rear Right, LFE</li>
+      <li><strong>6.0</strong> Front Left, Front Right, Front Center, Rear Center, Side Left, Side Right</li>
+      <li><strong>6.1</strong> Front Left, Front Right, Front Center, Rear Center, Side Left, Side Right, LFE</li>
+      <li><strong>7.0</strong> Front Left, Front Right, Front Center, Rear Left, Rear Right, Side Left, Side Right</li>
+      <li><strong>7.1</strong> Front Left, Front Right, Front Center, Rear Left, Rear Right, Side Left, Side Right, LFE</li>
+    </ul>
+    <p>The layouts listed don't necessarily represent the channel ordering.</p>
+    <table>
+      <thead>
+        <tr><th>File</th><th>Layout</th><th>PCE</th><th>HTML Audio</th><th>MSE</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script type="text/javascript">
+
+    const audio_samples = [
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/2_point_0.m4a',
+        layout: '2.0',
+        pce: false,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/2_point_1.m4a',
+        layout: '2.1',
+        pce: true,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/3_point_0.m4a',
+        layout: '3.0',
+        pce: false,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/3_point_1.m4a',
+        layout: '3.1',
+        pce: true,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/4_point_0.m4a',
+        layout: '4.0',
+        pce: false,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/4_point_1.m4a',
+        layout: '4.1',
+        pce: true,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/5_point_0.m4a',
+        layout: '5.0',
+        pce: false,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/5_point_1.m4a',
+        layout: '5.1',
+        pce: false,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/6_point_0.m4a',
+        layout: '6.0',
+        pce: true,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/6_point_1.m4a',
+        layout: '6.1',
+        pce: true,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/7_point_0.m4a',
+        layout: '7.0',
+        pce: true,
+      },
+      { mime: 'audio/mp4;codecs="mp4a.40.2"',
+        src: 'media/7_point_1.m4a',
+        layout: '7.1',
+        pce: false,
+      },
+    ];
+
+    audio_samples.forEach(function(sample) {
+      const mse_audio = document.createElement('audio');
+      const html_audio = document.createElement('audio');
+
+      html_audio.src = sample.src;
+      html_audio.setAttribute('controls','');
+
+      const mediaSource = new MediaSource();
+      mse_audio.src = URL.createObjectURL(mediaSource);
+      mse_audio.setAttribute('controls','');
+
+      mediaSource.addEventListener('sourceopen', function() {
+        let sourceBuffer = null;
+        URL.revokeObjectURL(mse_audio.src);
+
+        try {
+          sourceBuffer = mediaSource.addSourceBuffer(sample.mime);
+        } catch(e) {
+          console.log(e);
+          return;
+        }
+
+        sourceBuffer.addEventListener('updateend', function() {
+          if(!sourceBuffer.updating && mediaSource.readyState === 'open') {
+             mediaSource.endOfStream();
+         }
+        });
+
+        fetch(sample.src).then(function(response) {
+          return response.arrayBuffer();
+        }).then(function(data) {
+          sourceBuffer.appendBuffer(data);
+        });
+
+      });
+
+      /* append everything to table */
+
+      const tbody = document.getElementsByTagName('tbody')[0];
+      const tr = document.createElement('tr');
+      const td_file = document.createElement('td');
+      const td_layout = document.createElement('td');
+      const td_pce = document.createElement('td');
+      const td_html_audio = document.createElement('td');
+      const td_mse_audio = document.createElement('td');
+
+      td_file.innerText = sample.src;
+      td_layout.innerText = sample.layout;
+      td_pce.innerText = sample.pce ? 'true' : 'false';
+
+      td_html_audio.appendChild(html_audio);
+      td_mse_audio.appendChild(mse_audio);
+      tr.appendChild(td_file);
+      tr.appendChild(td_layout);
+      tr.appendChild(td_pce);
+      tr.appendChild(td_html_audio);
+      tr.appendChild(td_mse_audio);
+      tbody.appendChild(tr);
+
+    });
+
+    </script>
+  </body>
+</html>
+
+
