@@ -2,43 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Multichannel AAC Audio in Fragmented MP4</title>
     <style>
 
-      table {
-          min-width: 90%;
-          border-collapse: collapse;
-          margin: auto;
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      *, *::before, *::after {
+          box-sizing: border-box;
+      }
+
+      /* Remove default margin */
+      body,
+      h1,
+      h2,
+      p,
+      {
+        margin: 0;
+      }
+
+      body {
+          margin-left: .5em;
+          margin-right: .5em;
+      }
+
+      #output {
+          display: grid;
+          grid-template-columns: max-content fit-content(75%);
+          column-gap: 1em;
+          row-gap: 1em;
           font-family: sans-serif;
-          border-radius: 10px;
-          overflow: hidden;
+          align-items: center;
+          max-width: 100%;
       }
 
-      thead tr {
-          background-color: #009879;
-          color: #ffffff;
-          text-align: left;
-      }
-
-      th, td {
-          padding: 12px 15px;
-      }
-
-      tbody tr {
-          border-bottom: 1px solid #dddddd;
-      }
-      tbody tr:nth-of-type(even) {
-          background-color: #f3f3f3;
-      }
-
-      tbody tr:last-of-type {
-          border-bottom: 2px solid #009879;
+      h2 {
+          grid-column: span 2;
+          margin-top: 1.5em;
+          margin-bottom: 0;
+          font-size: 1.5em;
       }
 
       audio {
           width: 100%;
       }
+
     </style>
   </head>
   <body>
@@ -71,12 +77,7 @@
       <li><strong>7.1</strong> Front Left, Front Right, Front Center, Rear Left, Rear Right, Side Left, Side Right, LFE</li>
     </ul>
     <p>The layouts listed don't necessarily represent the channel ordering.</p>
-    <table>
-      <thead>
-        <tr><th>File</th><th>Layout</th><th>PCE</th><th>HTML Audio</th><th>MSE</th></tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div id="output"></div>
     <script type="text/javascript">
 
     const audio_samples = [
@@ -182,26 +183,42 @@
 
       /* append everything to table */
 
-      const tbody = document.getElementsByTagName('tbody')[0];
-      const tr = document.createElement('tr');
-      const td_file = document.createElement('td');
-      const td_layout = document.createElement('td');
-      const td_pce = document.createElement('td');
-      const td_html_audio = document.createElement('td');
-      const td_mse_audio = document.createElement('td');
+      const output = document.getElementById('output');
 
-      td_file.innerText = sample.src;
-      td_layout.innerText = sample.layout;
-      td_pce.innerHTML = sample.pce ? '<strong>true</strong>' : 'false';
+      const h2 = document.createElement('h2');
 
-      td_html_audio.appendChild(html_audio);
-      td_mse_audio.appendChild(mse_audio);
-      tr.appendChild(td_file);
-      tr.appendChild(td_layout);
-      tr.appendChild(td_pce);
-      tr.appendChild(td_html_audio);
-      tr.appendChild(td_mse_audio);
-      tbody.appendChild(tr);
+      const filename_label = document.createElement('div');
+      const filename_value = document.createElement('div');
+      const pce_label = document.createElement('div');
+      const pce_value = document.createElement('div');
+      const htmlaudio_label = document.createElement('div');
+      const htmlaudio_value = document.createElement('div');
+      const mseaudio_label = document.createElement('div');
+      const mseaudio_value = document.createElement('div');
+
+      h2.innerText = 'Channels: ' + sample.layout;
+
+      filename_label.innerText = 'File';
+      filename_value.innerText = sample.src;
+
+      pce_label.innerText = 'PCE';
+      pce_value.innerHTML = sample.pce ? '<strong>true</strong>' : 'false';
+
+      htmlaudio_label.innerText = 'HTML Audio';
+      htmlaudio_value.appendChild(html_audio);
+
+      mseaudio_label.innerText = 'MSE Audio';
+      mseaudio_value.appendChild(mse_audio);
+
+      output.appendChild(h2);
+      output.appendChild(filename_label);
+      output.appendChild(filename_value);
+      output.appendChild(pce_label);
+      output.appendChild(pce_value);
+      output.appendChild(htmlaudio_label);
+      output.appendChild(htmlaudio_value);
+      output.appendChild(mseaudio_label);
+      output.appendChild(mseaudio_value);
 
     });
 
